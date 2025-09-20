@@ -108,8 +108,6 @@ const styles = StyleSheet.create({
     input: {
         width: '87%',
         marginRight: 10,
-        borderWidth: 1,
-        borderColor: 'red'
     },
     badgeContainer: {
         flexDirection: 'row',

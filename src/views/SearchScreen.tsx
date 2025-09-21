@@ -49,15 +49,15 @@ export default function SearchScreen() {
                         longitude: location.longitude
                     }}
                     title="Mi posición"
-                    description="Yo estoy aquí!"
+                    description="Mi dispositivo está aquí!"
                 />
-                <TouchableOpacity
-                    onPress={onSetMyLocation}
-                    style={styles.goToMyLocationButtom}
-                >
-                    <MaterialIcons name="my-location" size={30} color="black" />
-                </TouchableOpacity>
             </MapView>
+            <TouchableOpacity
+                onPress={onSetMyLocation}
+                style={styles.goToMyLocationButtom}
+            >
+                <MaterialIcons name="my-location" size={30} color="black" />
+            </TouchableOpacity>
         </View>
     )
 }

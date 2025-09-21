@@ -36,19 +36,20 @@ export default function Home() {
                 style={styles.pagerViewcontainer}
                 initialPage={0}
                 orientation="vertical"
+                offscreenPageLimit={1}
                 onPageSelected={onPageSelected}
             >
                 {videos?.map((item, index) => (
                     <View key={index}>
+                        { index >= currentPage - 1 && index <= currentPage + 1 &&
                         <VideoPlayer
                             url={item.url}
                             image={item.image}
                             user={item.user}
                             isFocused={index === currentPage}
-                        />
+                        />}
                     </View>
                 ))}
-                
             </PagerView>
         </View>
     )

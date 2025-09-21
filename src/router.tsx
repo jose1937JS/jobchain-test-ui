@@ -1,9 +1,11 @@
+import {Image, StyleSheet} from 'react-native'
 import { createStaticNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './views/HomeScreen'
 import WalletScreen from './views/WalletScreen'
 import NotificationScreen from './views/NotificationScreen'
 import MessagesScreen from './views/MessagesScreen'
+import SearchScreen from './views/SearchScreen'
 import { Fontisto } from '@expo/vector-icons';
 import { theme } from './styles/global'
 import Header from './components/Header'
@@ -25,6 +27,12 @@ const TabStack = createBottomTabNavigator({
 			)
 		},
 		tabBarIcon: ({ focused, size }) => {
+			if(route.name == 'SearchScreen') {
+				return (
+					<Image source={require('../assets/search.png')} style={styles.searchIcon} />
+				)
+			}
+
 			const icons = {
 				'HomeScreen': 'home',
 				'WalletScreen': 'wallet',
@@ -50,6 +58,10 @@ const TabStack = createBottomTabNavigator({
 			screen: WalletScreen,
 			options: { title: 'Mi Billetera', }
 		},
+		SearchScreen: {
+			screen: SearchScreen,
+			options: { title: 'Buscar', }
+		},
 		NotificationScreen: {
 			screen: NotificationScreen,
 			options: { 
@@ -66,6 +78,16 @@ const TabStack = createBottomTabNavigator({
 		}
 	},
 });
+
+const styles = StyleSheet.create({
+	searchIcon: {
+		width: 45,
+		height: 45,
+		marginBottom: 20,
+		borderRadius: 22,
+		resizeMode: 'contain'
+	}
+})
 
 const Navigation = createStaticNavigation(TabStack);
 

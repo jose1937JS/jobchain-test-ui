@@ -36,6 +36,12 @@
             "./assets/fonts/montserrat/Montserrat-SemiBold.ttf"
           ]
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
       ]
     ]
   }

@@ -1,9 +1,10 @@
 import { StyleSheet, TouchableOpacity, Image } from "react-native";
 import { theme } from '../styles/global'
+import {FloatingButtonProps} from '../types'
 
-export default function FloatingButton() {
+export default function FloatingButton({onPress}: FloatingButtonProps) {
     return (
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => onPress()}>
             <Image source={require('../../assets/icon-white.png')} style={styles.logo} />
         </TouchableOpacity>
     )

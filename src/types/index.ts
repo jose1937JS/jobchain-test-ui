@@ -54,3 +54,22 @@ export type BadgeProps = {
 export type PageSelectedEvent = {
   position: number
 }
+
+export type FloatingButtonProps = {
+  onPress: Function
+}
+
+export type CoinsProps = {
+  vs_currency: string,
+  per_page: number
+}
+
+type LatLng = {
+  latitude: number;
+  longitude: number;
+};
+
+export type Region = LatLng & {
+  latitudeDelta: number;
+  longitudeDelta: number;
+};

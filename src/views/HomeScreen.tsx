@@ -1,22 +1,23 @@
-import { Text, StyleSheet, View } from 'react-native'
+import { useState, useEffect, useCallback } from 'react';
+import { StyleSheet, View } from 'react-native'
 import PagerView from 'react-native-pager-view';
 import VideoPlayer from '../components/VideoPlayer';
-import {getVideos} from '../api/Video'
-import { useState, useEffect } from 'react';
-import {VideoItemShorter} from '../types'
+import { getVideos } from '../api/Video'
+import { VideoItemShorter } from '../types'
+import { useFocusEffect } from '@react-navigation/native';
 
 export default function Home() {
     const [videos, setVideos] = useState<VideoItemShorter[]>([])
     const [currentPage, setCurrentPage] = useState(0);
 
     const getData = async () => {
-        const res = await getVideos({ 
-            query: 'nature', 
+        const res = await getVideos({
+            query: 'nature',
             per_page: 10,
-            orientation: 'portrait', 
+            orientation: 'portrait',
             size: 'medium'
         })
-        if(res) {
+        if (res) {
             setVideos(res)
         }
     }
@@ -30,6 +31,17 @@ export default function Home() {
         getData()
     }, []);
 
+    useFocusEffect(
+        useCallback(() => {
+            console.log('entrando')
+            setCurrentPage(0)
+            return () => {
+                console.log('saliendo')
+                setCurrentPage(9000)
+            };
+        }, [])
+    );
+
     return (
         <View style={styles.container}>
             <PagerView
@@ -41,13 +53,13 @@ export default function Home() {
             >
                 {videos?.map((item, index) => (
                     <View key={index}>
-                        { index >= currentPage - 1 && index <= currentPage + 1 &&
-                        <VideoPlayer
-                            url={item.url}
-                            image={item.image}
-                            user={item.user}
-                            isFocused={index === currentPage}
-                        />}
+                        {index >= currentPage - 1 && index <= currentPage + 1 &&
+                            <VideoPlayer
+                                url={item.url}
+                                image={item.image}
+                                user={item.user}
+                                isFocused={index === currentPage}
+                            />}
                     </View>
                 ))}
             </PagerView>

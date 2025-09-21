@@ -8,7 +8,6 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 export default function VideoPlayer({ url, image, user, isFocused }: VideoPlayerProps) {
     const player = useVideoPlayer(url, player => {
         player.loop = true;
-        // player.play();
     });
 
     useEffect(() => {

@@ -8,7 +8,7 @@ Se implementó consultas a una API gratuita para obtener los precios de las crip
 # Captura de pantallas.
 
 ## Android
-![android](./assets/android.png)
+![android1](./assets/android.png) ![android2](./assets/android2.png) ![android4](./assets/android4.png) ![android3](./assets/android3.png)
 
 ## IOS
-![ios](./assets/ios.png)
+![ios1](./assets/ios.png) ![ios3](./assets/ios3.png) ![ios4](./assets/ios4.png) ![ios2](./assets/ios2.png)

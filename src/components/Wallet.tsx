@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, StyleSheet, ScrollView, FlatList, ListRenderItem } from 'react-native'
+import { View, StyleSheet, ScrollView, FlatList } from 'react-native'
 import { theme } from '../styles/global'
 import Input from './Input'
 import Octicons from '@expo/vector-icons/Octicons';

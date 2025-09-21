@@ -52,7 +52,7 @@ const TabStack = createBottomTabNavigator({
 	screens: {
 		HomeScreen: {
 			screen: HomeScreen,
-			options: { title: 'Inicio', }
+			options: { title: 'Inicio', headerShown: false }
 		},
 		WalletScreen: {
 			screen: WalletScreen,

@@ -7,7 +7,8 @@ const theme = {
     textLight: '#b7b6c8ff',
     green: '#45934b',
     inputBg: '#1f1f37',
-    red: 'red'
+    red: 'red',
+    grey: '#858585ff'
 }
 
 const styles = StyleSheet.create({

@@ -73,3 +73,64 @@ export type Region = LatLng & {
   latitudeDelta: number;
   longitudeDelta: number;
 };
+
+export interface VideoProps {
+  query: string,
+  per_page?: number,
+  orientation?: string,
+  size?: string
+}
+
+interface VideoUser {
+  id: number
+  name: string
+  url: string
+}
+
+export interface VideoFile {
+  id: number
+  quality: string
+  file_type: string
+  width: number
+  height: number
+  fps: number
+  link: string
+  size: number
+}
+
+interface VideoPicture {
+  id: number
+  nr: number
+  picture: string
+}
+
+export interface VideoItem {
+  id: number
+  width: number
+  height: number
+  duration: number
+  full_res: any
+  tags: any[]
+  url: string
+  image: string
+  avg_color: any
+  user: VideoUser
+  video_files: VideoFile[]
+  video_pictures: VideoPicture[]
+}
+export interface VideoItemShorter {
+  id: number,
+  width: number,
+  height: number,
+  duration: number,
+  image: string,
+  url: string,
+  user: VideoUser
+}
+
+export interface VideoPlayerProps {
+  url: string,
+  image: string,
+  isFocused: boolean,
+  user: VideoUser
+}
